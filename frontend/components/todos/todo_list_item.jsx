@@ -1,14 +1,22 @@
 import React from 'react';
 import merge from 'lodash/merge';
+import TodoDetailViewContainer from './todo_detail_view_container';
 
 class TodoListItem extends React.Component {
   constructor(props){
     super(props);
 
+    this.state = { detail: false };
+    this.toggleDetail = this.toggleDetail.bind(this);
     this.toggleTodo = this.toggleTodo.bind(this);
   }
 
-  toggleTodo (e) {
+  toggleDetail(e) {
+    e.preventDefault();
+    this.setState({ detail: !this.state.detail });
+  }
+
+  toggleTodo(e) {
     e.preventDefault();
     // Merge the current todo with a toggled "done" property:
     const toggledTodo = merge(
@@ -22,17 +30,23 @@ class TodoListItem extends React.Component {
   }
 
   render () {
-    const { todo, removeTodo, receiveTodo } = this.props;
+    const { todo, receiveTodo } = this.props;
     const { title, done } = todo;
+    let detail;
+    if (this.state.detail) {
+      detail = <TodoDetailViewContainer todo={todo} />
+    }
     return (
       <li>
-        {title}
-        <button onClick={() => removeTodo(todo)}>Delete</button>
+        <h3><a onClick={this.toggleDetail}>{title}</a></h3>
         <button
           onClick={this.toggleTodo}
-          className={ done ? "done" : "undone" }>{done ? "Undo" : "Done"}</button>
+          className={ done ? "done" : "undone" }>{ done ? "Undo" : "Done" }</button>
+        <div>
+          { detail }
+        </div>
       </li>
-    )
+    );
   }
 }
 
