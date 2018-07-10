@@ -7,6 +7,8 @@ class TodoForm extends React.Component {
     super(props);
     this.state = {
       title: '',
+      measure: '',
+      deadline: '',
       body: '',
       done: false
     };
@@ -26,6 +28,8 @@ class TodoForm extends React.Component {
     // after we receiveTodo, we need to reset the form to blank:
     this.setState({
       title: '',
+      measure: '',
+      deadline: '',
       body: ''
     })
 
@@ -41,6 +45,26 @@ class TodoForm extends React.Component {
             value={this.state.title}
             placeholder="buy milk"
             onChange={this.update('title')}
+            required
+          />
+        </label>
+        <label>How much?:
+          <input
+            className="input"
+            ref="measure"
+            value={this.state.measure}
+            placeholder="2 gallons"
+            onChange={this.update('measure')}
+            required
+          />
+        </label>
+        <label>Deadline:
+          <input
+            className="input"
+            ref="deadline"
+            value={this.state.deadline}
+            placeholder="by May 5th"
+            onChange={this.update('deadline')}
             required
           />
         </label>

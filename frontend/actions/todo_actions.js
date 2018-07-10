@@ -1,5 +1,6 @@
 export const RECEIVE_TODOS = 'RECEIVE_TODOS';
 export const RECEIVE_TODO = 'RECEIVE_TODO';
+export const REMOVE_TODO = 'REMOVE_TODO';
 
 
 // This action creator lets our reducer know to RESET the list of todos
@@ -15,5 +16,10 @@ export const receiveTodos = todos => ({
 // Receives a single todo object
 export const receiveTodo = todo => ({
   type: RECEIVE_TODO,
+  todo
+});
+
+export const removeTodo = todo => ({
+  type: REMOVE_TODO,
   todo
 });
