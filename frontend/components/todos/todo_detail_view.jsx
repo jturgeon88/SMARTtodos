@@ -1,13 +1,11 @@
 import React from 'react';
 
-class TodoDetailView extends React.Component {
-  constructor(props) {
-    super(props);
+import StepListContainer from '../steps/step_list_container';
 
-  }
+class TodoDetailView extends React.Component {
 
   render () {
-    // Where do I get todo from? I need to pass this down from TodoListItem
+    // todo is passed down from TodoListItem, while removeTodo comes from the container
     const { todo, removeTodo } = this.props;
 
     return (
@@ -17,7 +15,8 @@ class TodoDetailView extends React.Component {
           <li>{todo.measure}</li>
           <li>{todo.deadline}</li>
         </ul>
-        <button onClick={() => removeTodo(todo)}>Delete Todo</button>
+        <StepListContainer todo_id={todo.id} />
+        <button className="delete-button" onClick={ () => removeTodo(todo) }>Delete Todo</button>
       </div>
     );
   }
