@@ -13,7 +13,7 @@ class StepList extends React.Component {
    const stepListItems = steps.map(step => <StepListItemContainer key={step.id} step={step} />)
    return (
      <div>
-       <ul>
+       <ul className="step-list">
          {stepListItems}
        </ul>
        <StepForm receiveStep={receiveStep} todo_id={todo_id} />

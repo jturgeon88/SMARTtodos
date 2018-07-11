@@ -83,7 +83,7 @@ class TodoForm extends React.Component {
         <input type="checkbox" name="achievable" value="Achievable" required/>This todo is Achievable<br/>
         <input type="checkbox" name="realistic" value="Realistic" required/>This todo is Realistic<br/>
         <input type="checkbox" name="time-bound" value="Time-bound" required/>This todo is Time-Bound<br/>
-        <button className="submit">Create Smart Todo!</button>
+        <button className="create-button">Create Smart Todo!</button>
       </form>
     );
   }

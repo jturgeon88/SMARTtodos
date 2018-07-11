@@ -6,6 +6,7 @@ class StepForm extends React.Component {
     super(props);
     this.state = {
       title: '',
+      body: '',
       done: false
     };
 
@@ -23,7 +24,8 @@ class StepForm extends React.Component {
     this.props.receiveStep(step);
     // after we receiveStep, we need to reset the form to blank:
     this.setState({
-      title: ''
+      title: '',
+      body: ''
     })
   }
 
@@ -42,7 +44,16 @@ class StepForm extends React.Component {
             >
           </input>
         </label>
-        <button className="submit">Create Progress Goal</button>
+        <label>Description:
+          <input
+            className="input"
+            ref="body"
+            value={ this.state.body }
+            placeholder="land first client"
+            onChange={ this.update('body') }
+            required />
+        </label>
+        <button className="create-button">Create Progress Goal</button>
       </form>
     );
   }

@@ -11,9 +11,9 @@ class TodoDetailView extends React.Component {
     return (
       <div>
         <ul>
-          <li>{todo.body}</li>
-          <li>{todo.measure}</li>
-          <li>{todo.deadline}</li>
+          <p className="todo-body">{todo.body}</p >
+          <p className="todo-body">{todo.measure}</p>
+          <p className="todo-body">{todo.deadline}</p>
         </ul>
         <StepListContainer todo_id={todo.id} />
         <button className="delete-button" onClick={ () => removeTodo(todo) }>Delete Todo</button>

@@ -19,7 +19,7 @@ class TodoList extends React.Component {
     );
     return (
       <div>
-        <ul>
+        <ul className="todo-list">
           {ListOfTodos}
         </ul>
         <TodoForm

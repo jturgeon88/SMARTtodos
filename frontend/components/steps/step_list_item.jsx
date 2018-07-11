@@ -31,12 +31,17 @@ class StepListItem extends React.Component {
     const { step, receiveStep, removeStep } = this.props;
     const { title, done } = step;
     return(
-      <li>
-        <h3>{title}</h3>
-        <button
-          onClick={this.toggleStep}
-          className={ done ? "done" : "undone" } >{ done ? "Undo" : "Done" }</button>
-        <button onClick={() => removeStep(step)}>Delete Step</button>
+      <li className="step-header">
+        <div className="step-info">
+          <h3>{title}</h3>
+
+        </div>
+        <div className="step-buttons">
+          <button
+            onClick={this.toggleStep}
+            className={ done ? "done" : "undone" } >{ done ? "Undo" : "Done" }</button>
+          <button className="delete-button" onClick={() => removeStep(step)}>Delete Step</button>
+        </div>
       </li>
     );
   }
