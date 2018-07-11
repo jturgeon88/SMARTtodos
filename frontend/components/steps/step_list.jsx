@@ -1,5 +1,6 @@
 import React from 'react';
 import StepListItemContainer from './step_list_item_container';
+import StepForm from './step_form';
 
 class StepList extends React.Component {
  constructor (props) {
@@ -8,14 +9,14 @@ class StepList extends React.Component {
  }
 
  render () {
-   const { steps, todo_id } = this.props;
+   const { steps, todo_id, receiveStep } = this.props;
    const stepListItems = steps.map(step => <StepListItemContainer key={step.id} step={step} />)
    return (
      <div>
        <ul>
          {stepListItems}
        </ul>
-
+       <StepForm receiveStep={receiveStep} todo_id={todo_id} />
      </div>
    );
  }
