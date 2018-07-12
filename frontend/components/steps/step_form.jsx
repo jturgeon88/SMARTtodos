@@ -33,7 +33,7 @@ class StepForm extends React.Component {
 
     return (
       <form className="step-form" onSubmit={this.handleSubmit}>
-        <label>
+        <label>Progress Goal:
           <input
             className="input"
             ref="title"

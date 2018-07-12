@@ -29,18 +29,18 @@ class StepListItem extends React.Component {
   render () {
     // step gets passed down from the StepList component
     const { step, receiveStep, removeStep } = this.props;
-    const { title, done } = step;
+    const { title, body, done } = step;
     return(
       <li className="step-header">
         <div className="step-info">
           <h3>{title}</h3>
-
+          <p>{body}</p>
         </div>
         <div className="step-buttons">
           <button
             onClick={this.toggleStep}
             className={ done ? "done" : "undone" } >{ done ? "Undo" : "Done" }</button>
-          <button className="delete-button" onClick={() => removeStep(step)}>Delete Step</button>
+          <button className="delete-button" onClick={() => removeStep(step)}>Delete</button>
         </div>
       </li>
     );
