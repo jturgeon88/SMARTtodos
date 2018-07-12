@@ -38,7 +38,7 @@ class TodoForm extends React.Component {
   render () {
     return (
       <form className='todo-form' onSubmit={this.handleSubmit}>
-        <label>Title:
+        <label><p className="smart-label">Specific Todo:</p>
           <input
             className="input"
             ref="title"
@@ -48,7 +48,7 @@ class TodoForm extends React.Component {
             required
           />
         </label>
-        <label>How much?:
+        <label><p className="smart-label">Measure:</p>
           <input
             className="input"
             ref="measure"
@@ -58,7 +58,9 @@ class TodoForm extends React.Component {
             required
           />
         </label>
-        <label>Deadline:
+        <div><p className="smart-label">Achievable:</p><input className="checkbox" type="checkbox" name="achievable" value="Achievable" required/></div><br/>
+        <div><p className="smart-label">Realistic:</p><input className="checkbox" type="checkbox" name="realistic" value="Realistic" required/></div><br/>
+        <label><p className="smart-label">Time:</p>
           <input
             className="input"
             ref="deadline"
@@ -68,7 +70,7 @@ class TodoForm extends React.Component {
             required
           />
         </label>
-        <label>Body:
+        <label>Additional Details:
           <textarea
             className="input"
             ref="body"
@@ -77,13 +79,8 @@ class TodoForm extends React.Component {
             placeholder="go to Costco it's cheaper there"
             onChange={this.update('body')}
             required></textarea>
-        </label><br/>
-        <input type="checkbox" name="specific" value="Specific" required/>This todo is Specific<br/>
-        <input type="checkbox" name="measureable" value="Measureable" required/>This todo is Measureable<br/>
-        <input type="checkbox" name="achievable" value="Achievable" required/>This todo is Achievable<br/>
-        <input type="checkbox" name="realistic" value="Realistic" required/>This todo is Realistic<br/>
-        <input type="checkbox" name="time-bound" value="Time-bound" required/>This todo is Time-Bound<br/>
-        <button className="submit">Create Smart Todo!</button>
+        </label>
+        <button className="create-button">Create Smart Todo!</button>
       </form>
     );
   }
