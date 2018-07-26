@@ -13,11 +13,13 @@ import { stepsByTodoId } from './reducers/selectors';
 // TESTING
 
 document.addEventListener('DOMContentLoaded', () => {
-    const preloadedState = localStorage.state ?
-      JSON.parse(localStorage.state) : {};
-    const store = configureStore(preloadedState);
+
+  const preloadedState = localStorage.state ?
+    JSON.parse(localStorage.state) : {};
+  const store = configureStore(preloadedState);
+
   // Testing:
-  // window.store = store;
+  window.getState = store.getState;
   // window.receiveSteps = receiveSteps;
   // window.receiveStep = receiveStep;
   // window.removeStep = removeStep;
