@@ -1,5 +1,7 @@
 # SMARTtodos
 
+[LIVE DEMO](https://jturgeon88.github.io/SMARTtodos "SMARTtodos App Demo")
+
 A straight forward productivity app that guides you towards creating Specific, Measurable, Actionable, Realistic, Time-based goals.
 
 Users can toggle the status of each todo or delete it. They can also create multiple "Progress Goals" (or sub-steps) for each todo. Progress Goals can also be toggled or deleted.
