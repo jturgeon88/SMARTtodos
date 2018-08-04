@@ -3,13 +3,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Root from './components/root';
+import configureStore from './store/store';
 
 // TESTING:
-import configureStore from './store/store';
 // import { receiveTodos, receiveTodo } from './actions/todo_actions';
-import { receiveSteps, receiveStep, removeStep } from './actions/step_actions';
+// import { receiveSteps, receiveStep, removeStep } from './actions/step_actions';
 // import { allTodos } from './reducers/selectors';
-import { stepsByTodoId } from './reducers/selectors';
+// import { stepsByTodoId } from './reducers/selectors';
 // TESTING
 
 document.addEventListener('DOMContentLoaded', () => {

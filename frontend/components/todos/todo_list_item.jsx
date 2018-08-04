@@ -6,6 +6,7 @@ class TodoListItem extends React.Component {
   constructor(props){
     super(props);
 
+    // Store local piece of state to toggle the detail view
     this.state = { detail: false };
     this.toggleDetail = this.toggleDetail.bind(this);
     this.toggleTodo = this.toggleTodo.bind(this);
